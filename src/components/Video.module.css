@@ -7,15 +7,14 @@
     align-items: center;
     justify-content: center;
     flex-direction: column; 
-    margin:30vh auto 0 auto;
+    margin:0 auto 0 auto;
     max-width: 100%;
     height: auto;
-    border: 3px solid rgb(0, 136, 204);
-    border-radius: 5px; 
+    border-radius: 5px;     
 }
 
 .exit_btn {
-    
+        
 }
 
 .button_exit{
@@ -27,5 +26,6 @@
 }
 
 .control_btn {
-
+    display: block;
+    
 }

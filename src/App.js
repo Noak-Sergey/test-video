@@ -1,5 +1,5 @@
 import './App.css';
-import { Video } from './components/Video'
+import { StartPage } from './components/StartPage'
 
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         
-        <Video/>
+        <StartPage/>
         
       </header>
     </div>

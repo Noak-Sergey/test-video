@@ -4,7 +4,7 @@ import ReactPlayer from 'react-player';
 import { useMachine } from '@xstate/react';
 import { createMachine, assign } from 'xstate';
 
-export const playerMachine = createMachine({
+const playerMachine = createMachine({
     context: {
         video: false,       // initial state
     },
@@ -26,7 +26,9 @@ export const playerMachine = createMachine({
 export const Video = () => {
     const [state, send] = useMachine(playerMachine);
 
-    console.log(state.context.video);
+    const togglePlayPause = () => {
+        state.context.video === false ? send('PLAY') : send('PAUSE')
+    }
 
      return (
          <div className={s.container}>
@@ -41,11 +43,10 @@ export const Video = () => {
                     loop={true}  
                     />  
                 <div className={s.control_btn}>
-                    <button onClick={() => send('PLAY')}>Play</button> 
-                    <button onClick={() => send('PAUSE')}>Pause</button> 
-                    <button>Zoom</button> 
+                    <button onClick={togglePlayPause}> {state.context.video ? "Pause" : "Play"} </button> 
+                    <button onClick={()=>{}}>Zoom</button> 
                 </div>                                  
-            </div>            
+            </div>        
         </div>
      )     
 }
